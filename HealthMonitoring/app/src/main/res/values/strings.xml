@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Health monitoring</string>
+    <string name="app_name1">Комплексная система мониторинга здоровья</string>
+    <string name="autorName">Автор: Савельев А.В.</string>
+    <string name="textFIO">ФИО</string>
+    <string name="textAge">Возраст</string>
+    <string name="editFIO">Введите ФИО</string>
+    <string name="editAge">Введите возраст</string>
+    <string name="textHighPressure">Верхнее давление</string>
+    <string name="textLowPressure">Нижнее давление</string>
+    <string name="textPulse">Пульс</string>
+    <string name="textTachycardia">Тахикардия</string>
+    <string name="pressure">Давление</string>
+    <string name="health">Здоровье</string>
+    <string name="save">Сохранить</string>
+
+</resources>
