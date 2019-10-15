@@ -15,8 +15,4 @@
     <string name="save">Сохранить</string>
     <string name="weight">Вес</string>
     <string name="quanitySteps">Шаги</string>
-    <string name="saveUser">Сохранение пользователя</string>
-    <string name="goToPressure">Переход к параметрам давления</string>
-    <string name="goToHealth">Переход к жизненным показателям</string>
-    <string name="savePressure">Сохранение параметров давления</string>
 </resources>
