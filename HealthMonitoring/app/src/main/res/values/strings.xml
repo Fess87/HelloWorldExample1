@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Health monitoring</string>
+    <string name="app_name">Мониторинг здоровья</string>
     <string name="app_name1">Комплексная система мониторинга здоровья</string>
     <string name="autorName">Автор: Савельев А.В.</string>
     <string name="textFIO">ФИО</string>
@@ -13,5 +13,10 @@
     <string name="pressure">Давление</string>
     <string name="health">Здоровье</string>
     <string name="save">Сохранить</string>
-
+    <string name="weight">Вес</string>
+    <string name="quanitySteps">Шаги</string>
+    <string name="saveUser">Сохранение пользователя</string>
+    <string name="goToPressure">Переход к параметрам давления</string>
+    <string name="goToHealth">Переход к жизненным показателям</string>
+    <string name="savePressure">Сохранение параметров давления</string>
 </resources>

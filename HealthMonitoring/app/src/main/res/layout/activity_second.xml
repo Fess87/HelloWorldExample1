@@ -4,6 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F1F1"
     tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/textHighPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/textHighPressure"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editHighPressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editLowPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textPulse"
+        app:layout_constraintStart_toStartOf="@+id/textLowPressure"
+        app:layout_constraintTop_toBottomOf="@+id/textLowPressure" />
+
+    <EditText
+        android:id="@+id/editPulse"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/tachycardia"
+        app:layout_constraintStart_toStartOf="@+id/textPulse"
+        app:layout_constraintTop_toBottomOf="@+id/textPulse" />
+
+    <TextView
+        android:id="@+id/textLowPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/textLowPressure"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editLowPressure"
+        app:layout_constraintStart_toStartOf="@+id/editHighPressure"
+        app:layout_constraintTop_toBottomOf="@+id/editHighPressure" />
+
+    <TextView
+        android:id="@+id/textPulse"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/textPulse"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editPulse"
+        app:layout_constraintStart_toStartOf="@+id/editLowPressure"
+        app:layout_constraintTop_toBottomOf="@+id/editLowPressure" />
+
+    <CheckBox
+        android:id="@+id/tachycardia"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/textTachycardia"
+        android:textColorLink="#D81B60"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSavePressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPulse" />
+
+    <EditText
+        android:id="@+id/editHighPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textLowPressure"
+        app:layout_constraintStart_toStartOf="@+id/textHighPressure"
+        app:layout_constraintTop_toBottomOf="@+id/textHighPressure" />
+
+    <Button
+        android:id="@+id/buttonSavePressure"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="200dp"
+        android:background="#009688"
+        android:text="@string/save"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tachycardia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
