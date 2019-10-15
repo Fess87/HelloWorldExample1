@@ -37,6 +37,7 @@ public class FirstActivity extends AppCompatActivity {
                 Log.i(TAG, "Сохранение пользователя");
                 try {
                     users.add(new User(fio.getText().toString(), Integer.valueOf(age.getText().toString())));
+                    Toast.makeText(FirstActivity.this,getString(R.string.userSave),Toast.LENGTH_LONG).show();
                 } catch (Exception ex){
                     Toast.makeText(FirstActivity.this,ex.getMessage(),Toast.LENGTH_LONG).show();
                 }

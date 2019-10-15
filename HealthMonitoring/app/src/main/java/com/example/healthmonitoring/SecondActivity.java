@@ -40,6 +40,7 @@ public class SecondActivity extends AppCompatActivity {
                 Log.i(TAG, "Сохранение параметров давления");
                 try {
                     list.add(new IndividualIndicators(Integer.valueOf(highPressure.getText().toString()), Integer.valueOf(lowPressure.getText().toString()), Integer.valueOf(pulse.getText().toString()), tachycardia.isChecked()));
+                    Toast.makeText(SecondActivity.this,getString(R.string.dataSave),Toast.LENGTH_LONG).show();
                 } catch (Exception ex){
                     Toast.makeText(SecondActivity.this,ex.getMessage(),Toast.LENGTH_LONG).show();
                 }

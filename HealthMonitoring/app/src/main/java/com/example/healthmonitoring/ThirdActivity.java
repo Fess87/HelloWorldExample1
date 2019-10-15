@@ -35,6 +35,7 @@ public class ThirdActivity extends AppCompatActivity {
                 Log.i(TAG, "Сохранение жизненных показателей");
                 try{
                 list.add(new VitalIndicators(Double.parseDouble(weight.getText().toString()), Integer.parseInt(steps.getText().toString())));
+                Toast.makeText(ThirdActivity.this,getString(R.string.dataSave),Toast.LENGTH_LONG).show();
                 }catch (Exception ex){
                     Toast.makeText(ThirdActivity.this,ex.getMessage(),Toast.LENGTH_LONG).show();
                 }

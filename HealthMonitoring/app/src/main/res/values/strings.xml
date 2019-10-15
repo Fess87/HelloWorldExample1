@@ -15,4 +15,6 @@
     <string name="save">Сохранить</string>
     <string name="weight">Вес</string>
     <string name="quanitySteps">Шаги</string>
+    <string name="dataSave">Данные сохранены</string>
+    <string name="userSave">Пользователь сохранен</string>
 </resources>
