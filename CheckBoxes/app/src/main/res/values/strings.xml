@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CheckBoxes</string>
+    <string name="bankCardChkBx">С банковской карты</string>
+    <string name="mobilePhoneChkBx">С мобильного телефона</string>
+    <string name="cashAddressChkBx">Наличными по адресу</string>
+    <string name="inputMoney">Ввод денег</string>
+    <string name="inputInfo">Информация об оплате</string>
+    <string name="btnOK">OK</string>
+    <string name="forPayCardTxt"> рублей списано с карты: </string>
+    <string name="forPayMobileTxt"> рублей списано с телефона: </string>
+    <string name="forPayOnAddressTxt"> рублей оплатите по адресу: </string>
+</resources>
