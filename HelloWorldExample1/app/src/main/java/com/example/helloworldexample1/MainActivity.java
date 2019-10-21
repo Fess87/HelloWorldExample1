@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            text1.setText("Подписка на рассылку успешно оформлена для пользователя " + editName.getText().toString() + " на электронный адрес "+ editEmail.getText().toString());
+            text1.setText(getString(R.string.txtSubscriptionDone)+ " " + editName.getText().toString() + " " + getString(R.string.txtOnEmail) + " " + editEmail.getText().toString());
             }
         });
         Button button2 = (Button) findViewById(R.id.buttonClear);

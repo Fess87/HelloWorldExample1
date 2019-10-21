@@ -5,4 +5,7 @@
     <string name="userEmail">email</string>
     <string name="okButton">Ок</string>
     <string name="clearButton">Очистить</string>
+    <string name="txtSubscriptionDone">Подписка на рассылку успешно оформлена для пользователя</string>
+    <string name="txtOnEmail">на электронный адрес</string>
+
 </resources>
