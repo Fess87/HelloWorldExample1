@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">MyAppBar</string>
-    <string name="openNotes">Отркыть записную книжку</string>
-    <string name="openCalendar">Отркыть календарь</string>
     <string name="settings">Настройки</string>
     <string name="notes">Записная книжка</string>
     <string name="calendar">Календарь</string>
+    <string name="checkboxes">CheckBoxes</string>
     <string name="txtSave">данные сохранены</string>
     <string name="btnSaveTxt">Сохранить</string>
     <string name="dateNameTaskStart">Дата-время старта задачи:</string>
@@ -12,6 +11,15 @@
     <string name="fault">Ошибка</string>
     <string name="start">старт:</string>
     <string name="end">окончаниe:</string>
+    <string name="bankCardChkBx">С банковской карты</string>
+    <string name="mobilePhoneChkBx">С мобильного телефона</string>
+    <string name="cashAddressChkBx">Наличными по адресу</string>
+    <string name="inputMoney">Ввод денег</string>
+    <string name="inputInfo">Информация об оплате</string>
+    <string name="btnOK">OK</string>
+    <string name="forPayCardTxt"> рублей списано с карты: </string>
+    <string name="forPayMobileTxt"> рублей списано с телефона: </string>
+    <string name="forPayOnAddressTxt"> рублей оплатите по адресу: </string>
 </resources>
 
 

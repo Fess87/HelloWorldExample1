@@ -35,15 +35,17 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_open_notes) {
             Intent intentNotes = new Intent(MainActivity.this, NotesActivity.class);
             startActivity(intentNotes);
-            Toast.makeText(MainActivity.this, getString(R.string.openNotes), Toast.LENGTH_LONG).show();
             return true;
         } else if (id == R.id.action_open_calendar) {
             Intent intentNotes = new Intent(MainActivity.this, CalendarActivity.class);
             startActivity(intentNotes);
-            Toast.makeText(MainActivity.this, getString(R.string.openCalendar), Toast.LENGTH_LONG).show();
+            return true;
+        } else if (id == R.id.action_open_checkboxes) {
+            Intent intentNotes = new Intent(MainActivity.this, CheckBoxesActivity.class);
+            startActivity(intentNotes);
             return true;
         }
-        
+
         return super.onOptionsItemSelected(item);
     }
 }
