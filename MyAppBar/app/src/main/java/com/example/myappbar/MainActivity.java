@@ -37,8 +37,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentNotes);
             Toast.makeText(MainActivity.this, getString(R.string.openNotes), Toast.LENGTH_LONG).show();
             return true;
+        } else if (id == R.id.action_open_calendar) {
+            Intent intentNotes = new Intent(MainActivity.this, CalendarActivity.class);
+            startActivity(intentNotes);
+            Toast.makeText(MainActivity.this, getString(R.string.openCalendar), Toast.LENGTH_LONG).show();
+            return true;
         }
-
+        
         return super.onOptionsItemSelected(item);
     }
 }
