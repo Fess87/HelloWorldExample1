@@ -1,7 +1,9 @@
 package com.example.myappbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
     }
 
     @Override
@@ -29,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_open_notes) {
-            Toast.makeText(MainActivity.this, "Отркыть записную книжку", Toast.LENGTH_LONG).show();
+            Intent intentNotes = new Intent(MainActivity.this, NotesActivity.class);
+            startActivity(intentNotes);
+            Toast.makeText(MainActivity.this, getString(R.string.openNotes), Toast.LENGTH_LONG).show();
             return true;
         }
 

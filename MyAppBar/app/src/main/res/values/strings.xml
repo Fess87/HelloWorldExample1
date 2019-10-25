@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MyAppBar</string>
+    <string name="openNotes">Отркыть записную книжку</string>
+    <string name="openCalendar">Отркыть календарь</string>
+    <string name="settings">Настройки</string>
+    <string name="notes">Записная книжка</string>
+    <string name="calendar">Календарь</string>
+    <string name="txtSave">данные сохранены</string>
+    <string name="btnSaveTxt">Сохранить</string>
+    <string name="dateNameTaskStart">Дата-время старта задачи:</string>
+    <string name="dateNameTaskEnd">Дата-время окончания задачи:</string>
+    <string name="fault">Ошибка</string>
+    <string name="start">старт:</string>
+    <string name="end">окончаниe:</string>
 </resources>
+
+
