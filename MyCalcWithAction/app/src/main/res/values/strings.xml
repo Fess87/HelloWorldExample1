@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyCalcWithAction</string>
+    <string name="error">Ошибка</string>
+    <string name="splitonzero">На ноль делить нельзя!!!</string>
+</resources>
