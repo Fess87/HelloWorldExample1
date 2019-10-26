@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".CheckBoxesActivity"></activity>
+        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".CheckBoxesActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".NotesActivity" />
         <activity android:name=".MainActivity">

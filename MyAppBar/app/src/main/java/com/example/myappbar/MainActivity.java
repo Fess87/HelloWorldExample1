@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intentNotes = new Intent(MainActivity.this, CheckBoxesActivity.class);
             startActivity(intentNotes);
             return true;
+        } else if (id == R.id.action_open_spinner) {
+            Intent intentNotes = new Intent(MainActivity.this, SpinnerActivity.class);
+            startActivity(intentNotes);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

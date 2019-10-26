@@ -26,4 +26,10 @@
         android:orderInCategory="100"
         android:title="@string/checkboxes"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_spinner"
+        android:orderInCategory="100"
+        android:title="@string/spinnertxt"
+        app:showAsAction="never" />
 </menu>
