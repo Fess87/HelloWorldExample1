@@ -13,7 +13,6 @@
         android:layout_height="146dp"
         android:orientation="horizontal"
         >
-
         <TextView
             android:id="@+id/editText"
             android:layout_width="0dp"
@@ -27,7 +26,6 @@
             android:gravity="right"
             android:text=""
             android:textSize="60sp" />
-
     </LinearLayout>
 
 <LinearLayout
@@ -35,7 +33,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_below="@+id/string0"
     >
     <TextView
         android:id="@+id/number1"
@@ -48,7 +45,6 @@
         android:layout_margin="3dp"
         android:textSize="40sp"
         />
-
     <TextView
         android:id="@+id/number2"
         android:layout_width="0dp"
@@ -60,8 +56,6 @@
         android:layout_margin="3dp"
         android:textSize="40sp"
         />
-
-
     <TextView
         android:id="@+id/number3"
         android:layout_width="0dp"
@@ -73,8 +67,6 @@
         android:layout_margin="3dp"
         android:textSize="40sp"
         />
-
-
 </LinearLayout>
 
     <LinearLayout
@@ -82,7 +74,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/string0"
         >
         <TextView
             android:id="@+id/number4"
@@ -95,7 +86,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
         <TextView
             android:id="@+id/number5"
             android:layout_width="0dp"
@@ -107,8 +97,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
-
         <TextView
             android:id="@+id/number6"
             android:layout_width="0dp"
@@ -120,8 +108,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +115,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/string0"
         >
         <TextView
             android:id="@+id/number7"
@@ -142,7 +127,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
         <TextView
             android:id="@+id/number8"
             android:layout_width="0dp"
@@ -154,8 +138,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
-
         <TextView
             android:id="@+id/number9"
             android:layout_width="0dp"
@@ -167,8 +149,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -176,7 +156,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/string0"
         >
         <TextView
             android:id="@+id/number0"
@@ -189,7 +168,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
         <TextView
             android:id="@+id/point"
             android:layout_width="0dp"
@@ -201,8 +179,6 @@
             android:layout_margin="3dp"
             android:textSize="40sp"
             />
-
-
     </LinearLayout>
 
 </LinearLayout>
