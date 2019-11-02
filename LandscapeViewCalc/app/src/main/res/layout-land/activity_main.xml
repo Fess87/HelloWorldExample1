@@ -7,8 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@id/ingenerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#FFC107"
+        android:visibility="invisible"
+        android:text="Ing view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@id/simpleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#FFC107"
+        android:visibility="invisible"
+        android:text="Ing view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
     <TextView
-        android:id="@+id/editText"
+        android:id="@id/editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -21,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cancel"
+        android:id="@id/cancel"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -36,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/minus"
+        android:id="@id/minus"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -50,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/plus" />
 
     <TextView
-        android:id="@+id/number2"
+        android:id="@id/number2"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -64,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/plus_minus" />
 
     <TextView
-        android:id="@+id/number9"
+        android:id="@id/number9"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -78,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number6" />
 
     <TextView
-        android:id="@+id/number7"
+        android:id="@id/number7"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -92,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number4" />
 
     <TextView
-        android:id="@+id/number5"
+        android:id="@id/number5"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -106,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number2" />
 
     <TextView
-        android:id="@+id/precent"
+        android:id="@id/precent"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -121,7 +146,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/number8"
+        android:id="@id/number8"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -135,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number5" />
 
     <TextView
-        android:id="@+id/number1"
+        android:id="@id/number1"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -149,7 +174,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cancel" />
 
     <TextView
-        android:id="@+id/number3"
+        android:id="@id/number3"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -163,7 +188,7 @@
         app:layout_constraintTop_toBottomOf="@+id/precent" />
 
     <TextView
-        android:id="@+id/multiply"
+        android:id="@id/multiply"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -177,7 +202,7 @@
         app:layout_constraintTop_toBottomOf="@+id/splitup" />
 
     <TextView
-        android:id="@+id/number6"
+        android:id="@id/number6"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -191,7 +216,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number3" />
 
     <TextView
-        android:id="@+id/splitup"
+        android:id="@id/splitup"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -206,7 +231,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/number4"
+        android:id="@id/number4"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -220,7 +245,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number1" />
 
     <TextView
-        android:id="@+id/plus"
+        android:id="@id/plus"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -235,7 +260,7 @@
         app:layout_constraintTop_toBottomOf="@+id/multiply" />
 
     <TextView
-        android:id="@+id/plus_minus"
+        android:id="@id/plus_minus"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -251,7 +276,7 @@
 
 
     <TextView
-        android:id="@+id/number0"
+        android:id="@id/number0"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -266,7 +291,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number7" />
 
     <TextView
-        android:id="@+id/point"
+        android:id="@id/point"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -281,7 +306,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number9" />
 
     <TextView
-        android:id="@+id/equally"
+        android:id="@id/equally"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -296,7 +321,7 @@
         app:layout_constraintTop_toBottomOf="@+id/minus" />
 
     <TextView
-        android:id="@+id/openBracket"
+        android:id="@id/openBracket"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -311,7 +336,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/cos"
+        android:id="@id/cos"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -325,7 +350,7 @@
         app:layout_constraintTop_toBottomOf="@+id/closeBracket" />
 
     <TextView
-        android:id="@+id/exponent"
+        android:id="@id/exponent"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -340,7 +365,7 @@
 
 
     <TextView
-        android:id="@+id/pi"
+        android:id="@id/pi"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -354,7 +379,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ln" />
 
     <TextView
-        android:id="@+id/log"
+        android:id="@id/log"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -369,7 +394,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cos" />
 
     <TextView
-        android:id="@+id/exclamation"
+        android:id="@id/exclamation"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -385,7 +410,7 @@
 
 
     <TextView
-        android:id="@+id/exp"
+        android:id="@id/exp"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -399,7 +424,7 @@
         app:layout_constraintTop_toBottomOf="@+id/log" />
 
     <TextView
-        android:id="@+id/sin"
+        android:id="@id/sin"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -428,7 +453,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exclamation" />
 
     <TextView
-        android:id="@+id/rootsquare"
+        android:id="@id/rootsquare"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -442,7 +467,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tan" />
 
     <TextView
-        android:id="@+id/ln"
+        android:id="@id/ln"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -457,7 +482,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sin" />
 
     <TextView
-        android:id="@+id/closeBracket"
+        android:id="@id/closeBracket"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -472,7 +497,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/inv"
+        android:id="@id/inv"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -487,7 +512,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pi" />
 
     <TextView
-        android:id="@+id/rad"
+        android:id="@id/rad"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"
@@ -502,7 +527,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exp" />
 
     <TextView
-        android:id="@+id/backspace"
+        android:id="@id/backspace"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="3dp"

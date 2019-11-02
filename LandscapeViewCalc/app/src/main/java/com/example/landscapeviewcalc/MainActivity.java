@@ -19,27 +19,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void setView(){
-        Button button = findViewById(R.id.ingenerView);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button ingenerView = findViewById(R.id.ingenerView);
+        Button simpleView = findViewById(R.id.simpleView);
+
+        ingenerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View view = findViewById(R.id.simpleLayout);
                 View view2 = findViewById(R.id.ingenerLayout);
                 view.setVisibility(View.INVISIBLE);
                 view2.setVisibility(View.VISIBLE);
-
             }
         });
 
-        Button button2 = findViewById(R.id.simpleView);
-        button2.setOnClickListener(new View.OnClickListener() {
+        simpleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View view = findViewById(R.id.simpleLayout);
                 View view2 = findViewById(R.id.ingenerLayout);
                 view2.setVisibility(View.INVISIBLE);
                 view.setVisibility(View.VISIBLE);
-
             }
         });
     }
