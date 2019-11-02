@@ -15,13 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        View view = findViewById(R.id.ingenerLayout);
-        view.setVisibility(View.INVISIBLE);
         setView();
     }
 
     protected void setView(){
-
         Button button = findViewById(R.id.ingenerView);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

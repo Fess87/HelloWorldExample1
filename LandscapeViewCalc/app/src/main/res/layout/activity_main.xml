@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/simpleLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E5FCC9"
         android:visibility="visible"
         tools:context=".MainActivity">
 
@@ -332,7 +333,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E5FCC9"
-        android:visibility="visible"
+        android:visibility="invisible"
         tools:context=".MainActivity">
 
         <TextView
@@ -588,7 +589,5 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </FrameLayout>
