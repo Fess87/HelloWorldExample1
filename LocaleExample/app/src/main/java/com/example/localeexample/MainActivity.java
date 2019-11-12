@@ -15,64 +15,107 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private Spinner LanguagesSpinner;
-    private Button OkButton;
+    private Spinner ColorSpinner;
+    private Button okButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
         initSpinnerLanguages();
+
+        Utils.onActivityCreateSetTheme(this);
     }
 
-    private void initViews(){
+
+    private void initViews() {
         LanguagesSpinner = findViewById(R.id.spinnerLanguages);
-        OkButton = findViewById(R.id.okButton);
-    }
+        ColorSpinner = findViewById(R.id.spinnerColors);
+        okButton = findViewById(R.id.okButton);           }
 
     private void initSpinnerLanguages() {
-        ArrayAdapter<CharSequence> adapterLanguages = ArrayAdapter.createFromResource(this, R.array.language, android.R.layout.simple_spinner_item);
+        final ArrayAdapter<CharSequence> adapterLanguages = ArrayAdapter.createFromResource(this, R.array.language, android.R.layout.simple_spinner_item);
         adapterLanguages.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         LanguagesSpinner.setAdapter(adapterLanguages);
         LanguagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
-                pressOkButton(index);
+            public void onItemSelected(final AdapterView<?> adapterView, final View view, final int index, final long l) {
+                initSpinnerColors(index);
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(final AdapterView<?> adapterView) {
             }
         });
     }
 
-    private void pressOkButton(@Language final int index){
-        OkButton.setOnClickListener(new View.OnClickListener() {
+    private void initSpinnerColors(final int indexLanguage) {
+        final ArrayAdapter<CharSequence> adapterColors = ArrayAdapter.createFromResource(this, R.array.color, android.R.layout.simple_spinner_item);
+        adapterColors.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ColorSpinner.setAdapter(adapterColors);
+        ColorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                switch (index){
-                    case Language.Russian:
-                        Locale locale = new Locale("ru");
-                        Configuration config = new Configuration();
-                        config.setLocale(locale);
-                        getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                        recreate();
+            public void onItemSelected(final AdapterView<?> adapterView, final View view, final int indexColor, final long l) {
+                pressOkButton(indexLanguage, indexColor);
+            }
+
+            @Override
+            public void onNothingSelected(final AdapterView<?> adapterView) {
+            }
+        });
+    }
+
+    private void pressOkButton(@Language final int indexLanguage, @Color final int indexColor) {
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                final Locale locale = createLocaleFromLanguage(indexLanguage);
+                applyLocale(locale);
+                switch (indexColor){
+                    case Color.Green:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_GREEN);
                         break;
-                    case Language.English:
-                        Locale locale2 = new Locale("en");
-                        Configuration config2 = new Configuration();
-                        config2.setLocale(locale2);
-                        getResources().updateConfiguration(config2, getBaseContext().getResources().getDisplayMetrics());
-                        recreate();
+                    case Color.Black:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLACK);
                         break;
-                    case Language.Deutsch:
-                        Locale locale3 = new Locale("de");
-                        Configuration config3 = new Configuration();
-                        config3.setLocale(locale3);
-                        getResources().updateConfiguration(config3, getBaseContext().getResources().getDisplayMetrics());
-                        recreate();
+                    case Color.Blue:
+                        Utils.changeToTheme(MainActivity.this, Utils.THEME_BLUE);
                         break;
+                    default:
+                        throw new IllegalArgumentException("Unknown index: " + indexColor);
                 }
             }
         });
     }
+
+
+    private Locale createLocaleFromLanguage(@Language final int index) {
+        final String language;
+        switch (index) {
+            case Language.Russian:
+                language = "ru";
+                break;
+            case Language.English:
+                language = "en";
+                break;
+            case Language.Deutsch:
+                language = "de";
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown index: " + index);
+        }
+
+        return new Locale(language);
+    }
+
+    private void applyLocale(final Locale locale) {
+        final Configuration config = new Configuration();
+        config.setLocale(locale);
+        getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+    }
 }
+
+
+
