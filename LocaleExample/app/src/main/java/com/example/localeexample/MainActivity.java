@@ -21,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
         initViews();
         initSpinnerLanguages();
-
-        Utils.onActivityCreateSetTheme(this);
     }
 
 
