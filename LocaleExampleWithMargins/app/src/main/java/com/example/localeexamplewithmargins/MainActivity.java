@@ -72,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
                 final Locale locale = createLocaleFromLanguage(indexLanguage);
                 applyLocale(locale);
                 switch (indexMargin){
-                    case Color.Green:
+                    case Margin.Small:
                         Utils.changeToTheme(MainActivity.this, Utils.THEME_WITHSMALLMARGIN);
                         break;
-                    case Color.Black:
+                    case Margin.Medium:
                         Utils.changeToTheme(MainActivity.this, Utils.THEME_WITHMEDIUMMARGIN);
                         break;
-                    case Color.Blue:
+                    case Margin.Large:
                         Utils.changeToTheme(MainActivity.this, Utils.THEME_WITHLARGEMARGIN);
                         break;
                     default:
