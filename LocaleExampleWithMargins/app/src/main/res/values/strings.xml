@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LocaleExampleWithMargins</string>
+    <string name="buttonOk">Ok</string>
+    <string-array name="language">
+        <item>Russian</item>
+        <item>English</item>
+        <item>Deutsch</item>
+    </string-array>
+    <string-array name="margin">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+</resources>
+
