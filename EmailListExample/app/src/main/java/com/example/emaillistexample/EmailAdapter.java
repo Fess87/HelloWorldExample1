@@ -49,12 +49,24 @@ public class EmailAdapter extends BaseAdapter {
         return position;
     }
 
+    void addItem(ItemMail item) {
+        this.arrayEmails.add(item);
+        notifyDataSetChanged();
+    }
+
+    // Удаляет элемент списка.
+    void removeItem(int position) {
+        arrayEmails.remove(position);
+        notifyDataSetChanged();
+    }
+
     private CompoundButton.OnCheckedChangeListener myCheckChangeList
             = new CompoundButton.OnCheckedChangeListener() {
         public void onCheckedChanged(CompoundButton buttonView, boolean isBox) {
             arrayEmails.get((Integer) buttonView.getTag()).setBox(isBox);
         }
     };
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -79,7 +91,6 @@ public class EmailAdapter extends BaseAdapter {
         checkBox.setOnCheckedChangeListener(myCheckChangeList);
         checkBox.setTag(position);
         checkBox.setChecked(itemMail.isBox());
-
-        return null;
+        return view;
     }
 }

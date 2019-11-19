@@ -3,12 +3,11 @@ package com.example.emaillistexample;
 
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.widget.ImageView;
+
 
 import androidx.annotation.RequiresApi;
 
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public class ItemMail {
 
@@ -16,12 +15,13 @@ public class ItemMail {
     final String headEmail;
     final String textEmail;
     final LocalTime time;
-    final int image;
+    final Drawable image;
     private boolean box;
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
-    ItemMail(String senderName, String headEmail, String textEmail, int image, boolean box) {
+    ItemMail(String senderName, String headEmail, String textEmail, Drawable image, boolean box) {
         this.senderName = senderName;
         this.headEmail = headEmail;
         this.textEmail = textEmail;
@@ -46,7 +46,7 @@ public class ItemMail {
         return time;
     }
 
-    public int getImage() {
+    public Drawable getImage() {
         return image;
     }
 

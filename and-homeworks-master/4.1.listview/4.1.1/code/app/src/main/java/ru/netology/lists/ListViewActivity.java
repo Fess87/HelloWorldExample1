@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ListViewActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
