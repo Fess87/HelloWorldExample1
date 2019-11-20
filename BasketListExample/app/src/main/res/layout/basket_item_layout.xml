@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="itemName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="itemPrice"
+        app:layout_constraintStart_toEndOf="@id/itemIcon"
+        app:layout_constraintTop_toBottomOf="@id/itemName"
+        android:textSize="18dp"
+        android:background="@color/colorForFont"/>
+
+    <TextView
+        android:id="@+id/itemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="itemQuantity"
+        app:layout_constraintStart_toEndOf="@id/itemIcon"
+        app:layout_constraintTop_toBottomOf="@id/itemPrice"
+        android:textSize="12dp"
+         />
+
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:hint="itemDescription"
+        app:layout_constraintStart_toEndOf="@id/itemIcon"
+        app:layout_constraintTop_toBottomOf="@id/itemQuantity"
+        android:textSize="14dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/itemIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemName"
+        app:srcCompat="@drawable/car"
+        android:scaleType="centerCrop"/>
+
+    <CheckBox
+        android:id="@+id/selectedItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemPrice" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
