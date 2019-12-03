@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +83,12 @@ public class ProductAdapter extends BaseAdapter {
                 for (Product val:listproducts) {
                                         products.add(val.getPrice()+";"+val.getQuantity()+";"+val.getName()+";"+val.getImage()+";"+val.isCheckbox()+";"+val.getDescription());
                 }
-                FileUtils.updateItemsFile(, products);
+                try {
+                    FileUtils.updateItemsFile(ctx, products);
+                    notifyDataSetChanged();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
