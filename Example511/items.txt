@@ -1,0 +1,7 @@
+10;2;Cat;cat;false;This is cat.
+50;1;Airbus 319;airplan;false;Made by Airbus company.
+15;2;Basketball;basketball;false;This ball is fake.
+10;2;Football;football;false;Age 8+
+10;2;Bike;bike;false;For children 5+
+10;2;Wood horse;horse;false;Wood toys.
+10;2;BMW;car;false;This is original toy.
