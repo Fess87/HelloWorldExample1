@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Visibility</string>
-    <string name="error">Ошибка</string>
-    <string name="splitonzero">На ноль делить нельзя!!!</string>
-    <string name="view">visible</string>
-</resources>

@@ -5,11 +5,11 @@ public class Product {
     private int price;
     private int quantity;
     private String name;
-    private int image;
+    private String image;
     private boolean checkbox;
     private String description;
 
-    public Product(int price, int quantity, String name, int image, boolean checkbox, String description) {
+    public Product(int price, int quantity, String name, String image, boolean checkbox, String description) {
         this.price = price;
         this.quantity = quantity;
         this.name = name;
@@ -30,7 +30,7 @@ public class Product {
         return name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 

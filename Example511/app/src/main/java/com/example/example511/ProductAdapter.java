@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
@@ -44,7 +47,7 @@ public class ProductAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if(view==null){
             view = layoutInflater.inflate(R.layout.basket_item_layout, parent,false);
@@ -57,11 +60,12 @@ public class ProductAdapter extends BaseAdapter {
         TextView itemPrice = view.findViewById(R.id.itemPrice);
         ImageView itemImage = view.findViewById(R.id.itemIcon);
         CheckBox itemSelected = view.findViewById(R.id.selectedItem);
+        Button btnDel = view.findViewById(R.id.btnDel);
         itemName.setText(product.getName());
         itemDescription.setText("Описание:\n" + product.getDescription());
         itemQuantity.setText("Кол-во: "+product.getQuantity()+"шт.");
         itemPrice.setText(product.getPrice()+".00 руб.");
-        itemImage.setImageResource(product.getImage());
+        itemImage.setImageResource(getResId(product.getImage(), R.drawable.class));
         itemSelected.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -70,7 +74,28 @@ public class ProductAdapter extends BaseAdapter {
         });
         itemSelected.setTag(position);
         itemSelected.setChecked(product.isCheckbox());
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listproducts.remove(position);
+                ArrayList<String> products = new ArrayList<>();
+                for (Product val:listproducts) {
+                                        products.add(val.getPrice()+";"+val.getQuantity()+";"+val.getName()+";"+val.getImage()+";"+val.isCheckbox()+";"+val.getDescription());
+                }
+                FileUtils.updateItemsFile(, products);
+            }
+        });
 
         return view;
+    }
+
+    private int getResId(String resName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
