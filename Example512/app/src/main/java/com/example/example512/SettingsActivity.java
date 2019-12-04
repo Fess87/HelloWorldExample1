@@ -80,7 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (requestCode== MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE){
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                setup();
+                checkExternalStorageReadable();
             } else {
                 Toast.makeText(this,"Печально",Toast.LENGTH_SHORT).show();
             }
