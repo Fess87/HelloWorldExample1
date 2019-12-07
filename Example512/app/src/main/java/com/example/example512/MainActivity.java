@@ -1,11 +1,14 @@
 package com.example.example512;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -114,9 +117,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, SettingsActivity.IMAGE_RESULT_CODE);
             }
         });
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SettingsActivity.IMAGE_RESULT_CODE && data != null) {
+            Bitmap imageFromIntent = SettingsActivity.getImageFromIntent(data);
+            ImageView foneCalc = findViewById(R.id.foncalc);
+            foneCalc.setImageBitmap(imageFromIntent);
+        }
     }
 }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,10 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.Objects;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 10;
+    public static final int IMAGE_RESULT_CODE = 543;
+    private static final String IMAGE_RESULT_KEY = "IMAGE_RESULT_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,10 +70,14 @@ public class SettingsActivity extends AppCompatActivity {
                 TextView tw = findViewById(R.id.picturesLink);
                 String picturesName = tw.getText().toString();
                 final File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), picturesName);
-                ImageView foneCalc = findViewById(R.id.foncalc);
-                Bitmap myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-                foneCalc.setImageBitmap(myBitmap);
-                finish();
+                if (file.exists()) {
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra(IMAGE_RESULT_KEY, file);
+                    setResult(IMAGE_RESULT_CODE, resultIntent);
+                    finish();
+                } else {
+                    Toast.makeText(SettingsActivity.this, "Такого файла нет!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -86,6 +94,11 @@ public class SettingsActivity extends AppCompatActivity {
             }
             return;
         }
+    }
+
+    public static Bitmap getImageFromIntent(@NonNull Intent intent) {
+        File imageFile = (File) intent.getSerializableExtra(IMAGE_RESULT_KEY);
+        return BitmapFactory.decodeFile(Objects.requireNonNull(imageFile).getAbsolutePath());
     }
 
 }
