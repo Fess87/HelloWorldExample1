@@ -51,10 +51,7 @@ public class MainActivity extends AppCompatActivity {
         for (Integer val: delItems) {
             contentList.remove(val);
         }
-        listContentAdapter.notifyDataSetChanged();
     }
-
-
 
     @NonNull
     private SimpleAdapter createAdapter(String[] stringsTxt) {
@@ -99,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                indexDelItems = new ArrayList<>();
                 updateList();
                 swipeLayout.setRefreshing(false);
             }
