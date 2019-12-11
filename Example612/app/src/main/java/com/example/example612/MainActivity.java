@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         ArrayList<Integer> delItems = savedInstanceState.getIntegerArrayList("key");
         for (Integer val: delItems) {
-            contentList.remove(val);
+            contentList.remove(val.intValue());
         }
     }
 
