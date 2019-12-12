@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        ArrayList<Integer> delItems = savedInstanceState.getIntegerArrayList("key");
-        for (Integer val: delItems) {
+        indexDelItems = savedInstanceState.getIntegerArrayList("key");
+        for (Integer val: indexDelItems) {
             contentList.remove(val.intValue());
         }
     }
