@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NotesSavelyev</string>
+    <string name="pin_code">Новый пин-код:</string>
+    <string name="save">Сохранить</string>
+    <string name="warning_pin">Пин-код должен состоять из ровно 4 цифр.</string>
+    <string name="settings">Настройки</string>
+    <string name="savePin">Пин-код сохранен.</string>
+    <string name="enterPin">Введите пин:</string>
+    <string name="wrongPin">Пин-код неверный, попробуйте еще раз!</string>
+</resources>
