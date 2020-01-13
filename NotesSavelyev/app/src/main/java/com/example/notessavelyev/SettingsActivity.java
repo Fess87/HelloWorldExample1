@@ -13,15 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-
 public class SettingsActivity extends AppCompatActivity {
 
     Button btnSave;
@@ -29,6 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
     TextView warningPin;
     private SharedPreferences mySharedPref;
     private static String PIN_CODE = "pin_code";
+    private PinRepository pinRepository = App.getPinRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,23 +49,12 @@ public class SettingsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editPin.getText().toString().length()==4){
-                    File file = new File(getFilesDir(), "pin.txt");
-                    if(!file.exists()){
-                        try {
-                            FileOutputStream outputStream = openFileOutput("pin.txt", MODE_PRIVATE);
-                            String hashPin = HashUtils.md5Custom(editPin.getText().toString());
-                            outputStream.write(hashPin.getBytes());
-                            outputStream.close();
-                            Toast.makeText(SettingsActivity.this, "Пин-код сохранен!", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SettingsActivity.this, NotesActivity.class);
-                            startActivity(intent);
-                        } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                        } catch (IOException e) {
-                        e.printStackTrace();
-                        }
-                    }
+                final String pin = editPin.getText().toString();
+                if (pin.length() == 4) {
+                    pinRepository.setPin(pin);
+                    Toast.makeText(SettingsActivity.this, "Пин-код сохранен!", Toast.LENGTH_LONG).show();
+                    final Intent intent = new Intent(SettingsActivity.this, NoteActivity.class);
+                    startActivity(intent);
                 } else {
                     warningPin.setText(R.string.warning_pin);
                 }
