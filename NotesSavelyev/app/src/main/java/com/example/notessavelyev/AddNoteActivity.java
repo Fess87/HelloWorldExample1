@@ -48,6 +48,7 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void setDeadline() {
+        editTextDeadLine.setEnabled(false);
         checkBoxhasDeadLine.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -58,10 +59,12 @@ public class AddNoteActivity extends AppCompatActivity {
                             callDatePicker();
                         }
                     });
+                    editTextDeadLine.setEnabled(true);
                     setTimeAndDateInEditTextDeadLine();
                 } else if (!isChecked) {
                     editTextDeadLine.setText("");
                     editTextDeadLine.setHint(R.string.deadline);
+                    editTextDeadLine.setEnabled(false);
                 }
             }
         });
