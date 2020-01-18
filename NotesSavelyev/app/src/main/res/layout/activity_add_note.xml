@@ -1,0 +1,57 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    tools:context=".AddNoteActivity">
+
+    <EditText
+        android:id="@+id/editTextHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/head_note"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="@string/body_note"
+        android:inputType="textMultiLine"
+        android:minLines="7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHead" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHasDeadLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deadlineOk"
+        app:layout_constraintStart_toStartOf="@+id/editTextBody"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBody" />
+
+    <EditText
+        android:id="@+id/editTextDeadLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/deadline"
+        app:layout_constraintBottom_toBottomOf="@id/btnSelectDeadLine"
+        app:layout_constraintEnd_toStartOf="@id/btnSelectDeadLine"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxHasDeadLine" />
+
+    <ImageButton
+        android:id="@+id/btnSelectDeadLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxHasDeadLine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

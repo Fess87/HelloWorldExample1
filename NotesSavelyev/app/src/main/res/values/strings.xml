@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NotesSavelyev</string>
+    <string name="app_name">Заметки</string>
     <string name="pin_code">Новый пин-код:</string>
     <string name="save">Сохранить</string>
     <string name="warning_pin">Пин-код должен состоять из ровно 4 цифр.</string>
@@ -7,4 +7,11 @@
     <string name="savePin">Пин-код сохранен.</string>
     <string name="enterPin">Введите пин:</string>
     <string name="wrongPin">Пин-код неверный, попробуйте еще раз!</string>
+    <string name="title_activity_note2">Note2Activity</string>
+    <string name="head_note">Заголовок заметки</string>
+    <string name="body_note">Тело заметки</string>
+    <string name="new_note">Новая заметка</string>
+    <string name="deadlineOk">Есть дедлайн</string>
+    <string name="deadline">Дедлайн</string>
+
 </resources>
