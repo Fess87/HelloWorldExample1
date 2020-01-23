@@ -42,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/deadline"
+        android:layout_marginEnd="50dp"
         app:layout_constraintBottom_toBottomOf="@id/btnSelectDeadLine"
         app:layout_constraintEnd_toStartOf="@id/btnSelectDeadLine"
         app:layout_constraintStart_toStartOf="@+id/checkBoxHasDeadLine" />
@@ -50,6 +51,7 @@
         android:id="@+id/btnSelectDeadLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:src="@drawable/calendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxHasDeadLine" />

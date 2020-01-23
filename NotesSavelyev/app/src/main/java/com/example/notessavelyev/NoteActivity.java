@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
+
+import java.util.List;
 
 
 public class NoteActivity extends AppCompatActivity {
@@ -20,7 +23,19 @@ public class NoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
-        setTitle(R.string.app_name);
+
+        NoteRepository noteRepository = App.getNoteRepository();
+
+
+        ListView listViewNotes = findViewById(R.id.listViewNotes);
+
+        List<Note> notes = noteRepository.getNotes();
+
+        final NotesAdapter adapter = new NotesAdapter(this, notes);
+
+        listViewNotes.setAdapter(adapter);
+        
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +49,6 @@ public class NoteActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_note, menu);
         return true;
     }

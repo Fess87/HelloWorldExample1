@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewHead"
+            style="@style/HeadLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить новую текстовую заметку: заголовок, текстовое содержание, дедлайн" />
+
+        <TextView
+            android:id="@+id/textViewBody"
+            style="@style/Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="10dp"
+            android:text="Добавить новую текстовую заметку: заголовок, текстовое содержание, дедлайн. Добавить новую текстовую заметку: заголовок, текстовое содержание, дедлайн;" />
+
+        <TextView
+            android:id="@+id/textViewDeadLineDay"
+            style="@style/DeadLineDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="2dp"
+            android:padding="10dp"
+            android:text="31.12.2019 23:59:59" />
+
+
+
+
+</LinearLayout>

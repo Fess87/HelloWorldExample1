@@ -4,7 +4,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,44 +14,42 @@ import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Button btnSave;
-    EditText editPin;
-    TextView warningPin;
-    private SharedPreferences mySharedPref;
-    private static String PIN_CODE = "pin_code";
+    private Button btnSave;
+    private EditText editPin;
+    private TextView warningPin;
+    private int LEGTHPIN = 4;
     private PinRepository pinRepository = App.getPinRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        setTitle(R.string.settings);
         getHomeButton();
         initViews();
 
     }
 
-    protected void getHomeButton(){
+    private void getHomeButton(){
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    protected void initViews(){
+    private void initViews(){
         btnSave = findViewById(R.id.btnSave);
         editPin = findViewById(R.id.pinCode);
         warningPin = findViewById(R.id.warningPin);
         savePin();
     }
 
-    protected void savePin(){
+    private void savePin(){
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String pin = editPin.getText().toString();
-                if (pin.length() == 4) {
+                if (pin.length() == LEGTHPIN) {
                     pinRepository.setPin(pin);
-                    Toast.makeText(SettingsActivity.this, "Пин-код сохранен!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, R.string.savePin, Toast.LENGTH_LONG).show();
                     final Intent intent = new Intent(SettingsActivity.this, NoteActivity.class);
                     startActivity(intent);
                 } else {

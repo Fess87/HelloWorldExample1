@@ -23,17 +23,17 @@ import java.util.Calendar;
 
 public class AddNoteActivity extends AppCompatActivity {
 
-    EditText headNote;
-    EditText bodyNote;
-    CheckBox checkBoxhasDeadLine;
-    ImageButton btnSetDeadLine;
-    EditText editTextDeadLine;
+    private EditText headNote;
+    private EditText bodyNote;
+    private CheckBox checkBoxhasDeadLine;
+    private ImageButton btnSetDeadLine;
+    private EditText editTextDeadLine;
+    NoteRepository noteRepository = App.getNoteRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-        setTitle(R.string.new_note);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
         setDeadline();
@@ -49,10 +49,12 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private void setDeadline() {
         editTextDeadLine.setEnabled(false);
+        btnSetDeadLine.setEnabled(false);
         checkBoxhasDeadLine.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    btnSetDeadLine.setEnabled(true);
                     btnSetDeadLine.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -61,10 +63,11 @@ public class AddNoteActivity extends AppCompatActivity {
                     });
                     editTextDeadLine.setEnabled(true);
                     setTimeAndDateInEditTextDeadLine();
-                } else if (!isChecked) {
+                } else {
                     editTextDeadLine.setText("");
                     editTextDeadLine.setHint(R.string.deadline);
                     editTextDeadLine.setEnabled(false);
+                    btnSetDeadLine.setEnabled(false);
                 }
             }
         });
@@ -72,7 +75,6 @@ public class AddNoteActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_add_note, menu);
         return true;
     }
@@ -83,10 +85,11 @@ public class AddNoteActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            Toast.makeText(this, "Домой", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.home, Toast.LENGTH_SHORT).show();
             this.finish();
         } else if (id == R.id.action_save) {
-            Toast.makeText(this, "Сохранено", Toast.LENGTH_SHORT).show();
+            saveNote();
+            Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
             this.finish();
         }
         return super.onOptionsItemSelected(item);
@@ -95,9 +98,9 @@ public class AddNoteActivity extends AppCompatActivity {
     private void callDatePicker() {
 
         final Calendar cal = Calendar.getInstance();
-        int mYear = cal.get(Calendar.YEAR);
-        int mMonth = cal.get(Calendar.MONTH);
-        int mDay = cal.get(Calendar.DAY_OF_MONTH);
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
@@ -106,15 +109,27 @@ public class AddNoteActivity extends AppCompatActivity {
                         String editTextDateParam = dayOfMonth + "." + (monthOfYear + 1) + "." + year;
                         editTextDeadLine.setText(editTextDateParam + " " + "0:00");
                     }
-                }, mYear, mMonth, mDay);
+                }, year, month, day);
         datePickerDialog.show();
     }
 
     private void setTimeAndDateInEditTextDeadLine() {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         Calendar cal = Calendar.getInstance();
-        ;
         editTextDeadLine.setText(dateFormat.format(cal.getTime()));
+    }
+
+    private void saveNote(){
+        String deadline;
+        if(checkBoxhasDeadLine.isChecked()){
+            deadline = String.valueOf(editTextDeadLine.getText());
+        } else {
+            deadline = " ";
+        }
+        String head = String.valueOf(headNote.getText());
+        String body = String.valueOf(bodyNote.getText());
+        Note note = new Note(head, body, checkBoxhasDeadLine.isChecked(), deadline);
+        noteRepository.saveNote(note);
     }
 }
 
