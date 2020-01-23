@@ -63,7 +63,7 @@ public class FileNoteRepository implements NoteRepository {
                 } else {
                     deadline = " ";
                 }
-                final String noteTostring = note.getHead()+";-;"+note.getBody()+";-;"+deadline+";-;"+note.isHasDeadLine()+"\n";
+                final String noteTostring =note.getHead()+";-;"+note.getBody()+";-;"+deadline+";-;"+note.isHasDeadLine();
                 outputStream.write(noteTostring.getBytes());
                 outputStream.close();
             } catch (final IOException e) {
@@ -76,7 +76,7 @@ public class FileNoteRepository implements NoteRepository {
                 String line = reader.readLine();
                 StringBuilder output = new StringBuilder();
                 while(line!=null){
-                    output = output.append(line);
+                    output = output.append(line+"\n");
                     line = reader.readLine();
                 }
                 String notesInFile = output.toString();
@@ -88,7 +88,7 @@ public class FileNoteRepository implements NoteRepository {
                     deadline = " ";
                 }
                 final String noteTostring = note.getHead()+";-;"+note.getBody()+";-;"+deadline+";-;"+note.isHasDeadLine()+"\n";
-                notesInFile = notesInFile + noteTostring;
+                notesInFile = notesInFile+noteTostring;
                 outputStream.write(notesInFile.getBytes());
                 outputStream.close();
             } catch (FileNotFoundException e) {

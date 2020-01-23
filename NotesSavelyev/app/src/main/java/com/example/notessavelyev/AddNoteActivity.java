@@ -114,7 +114,7 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void setTimeAndDateInEditTextDeadLine() {
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat(NotesAdapter.DATE_PATTERN);
         Calendar cal = Calendar.getInstance();
         editTextDeadLine.setText(dateFormat.format(cal.getTime()));
     }

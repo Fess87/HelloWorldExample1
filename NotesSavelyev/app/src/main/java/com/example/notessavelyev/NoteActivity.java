@@ -34,8 +34,8 @@ public class NoteActivity extends AppCompatActivity {
         final NotesAdapter adapter = new NotesAdapter(this, notes);
 
         listViewNotes.setAdapter(adapter);
-        
 
+        adapter.notifyDataSetChanged();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
