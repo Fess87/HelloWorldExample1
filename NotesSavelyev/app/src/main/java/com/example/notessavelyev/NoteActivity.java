@@ -7,6 +7,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 
 import android.view.Menu;
@@ -18,41 +19,34 @@ import java.util.List;
 
 
 public class NoteActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
-
         NoteRepository noteRepository = App.getNoteRepository();
-
-
         ListView listViewNotes = findViewById(R.id.listViewNotes);
-
-        List<Note> notes = noteRepository.getNotes();
-
-        final NotesAdapter adapter = new NotesAdapter(this, notes);
-
+        final NotesAdapter adapter = new NotesAdapter(this);
+        noteRepository.getNotes().observe(this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+                adapter.setNotes(notes);
+            }
+        });
         listViewNotes.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NoteActivity.this, AddNoteActivity.class));
+                Intent intent = new Intent(NoteActivity.this, AddNoteActivity.class);
+                startActivity(intent);
             }
         });
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_note, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

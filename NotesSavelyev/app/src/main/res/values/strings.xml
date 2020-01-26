@@ -26,5 +26,6 @@
     <string name="number9">9</string>
     <string name="number0">0</string>
     <string name="txtdel">Del</string>
+    <string name="haveNotNotes">Заметок нет</string>
 
 </resources>

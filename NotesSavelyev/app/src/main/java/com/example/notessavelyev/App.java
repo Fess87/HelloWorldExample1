@@ -3,9 +3,7 @@ package com.example.notessavelyev;
 import android.app.Application;
 
 public class App extends Application {
-
     private static PinRepository pinRepository;
-
     private static NoteRepository noteRepository;
 
     public static PinRepository getPinRepository() {
@@ -16,11 +14,12 @@ public class App extends Application {
         return noteRepository;
     }
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         pinRepository = new HashedPinRepository(this);
-        noteRepository = new FileNoteRepository(this);
+        FileNoteRepository fileNoteRepository = new FileNoteRepository(this);
+        fileNoteRepository.readNotesFromFile();
+        noteRepository = fileNoteRepository;
     }
 }

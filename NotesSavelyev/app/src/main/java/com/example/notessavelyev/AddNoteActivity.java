@@ -37,6 +37,7 @@ public class AddNoteActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
         setDeadline();
+        getNote();
     }
 
     private void initViews() {
@@ -45,6 +46,7 @@ public class AddNoteActivity extends AppCompatActivity {
         checkBoxhasDeadLine = findViewById(R.id.checkBoxHasDeadLine);
         btnSetDeadLine = findViewById(R.id.btnSelectDeadLine);
         editTextDeadLine = findViewById(R.id.editTextDeadLine);
+
     }
 
     private void setDeadline() {
@@ -120,6 +122,11 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote(){
+        Bundle bundle = getIntent().getExtras();
+        int position = bundle.getInt("position");
+        if (!bundle.equals(null)){
+            noteRepository.deleteById(position);
+        }
         String deadline;
         if(checkBoxhasDeadLine.isChecked()){
             deadline = String.valueOf(editTextDeadLine.getText());
@@ -130,6 +137,16 @@ public class AddNoteActivity extends AppCompatActivity {
         String body = String.valueOf(bodyNote.getText());
         Note note = new Note(head, body, checkBoxhasDeadLine.isChecked(), deadline);
         noteRepository.saveNote(note);
+    }
+
+    private void getNote(){
+        Bundle bundle = getIntent().getExtras();
+        if(!bundle.equals(null)) {
+            headNote.setText(bundle.getString("head"));
+            bodyNote.setText(bundle.getString("body"));
+            editTextDeadLine.setText(bundle.getString("deadlineDate"));
+            checkBoxhasDeadLine.setChecked(bundle.getBoolean("isDeadline"));
+        }
     }
 }
 
